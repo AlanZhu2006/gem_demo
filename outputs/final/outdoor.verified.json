@@ -1,0 +1,20 @@
+{
+  "frames": 2153,
+  "fps": 30.0,
+  "duration_s": 71.76666666666667,
+  "full_decode": true,
+  "clock_visibility_verified": true,
+  "independent_arrivals_verified": true,
+  "baseline_grayscale_every_failed_frame_verified": true,
+  "past_rgb_and_local_plans_verified": true,
+  "local_plan_visible_frames": {
+    "gem": 2123,
+    "base": 1465
+  },
+  "events": {
+    "base": 1465,
+    "gem": 2123
+  },
+  "sha256": "94e6460781b237168efeaae030fca98f910c70ce2a9851729bfa299d01966543",
+  "reconstruction_caveat": "gem reversed then base forward joint inference. Playback visibility is timestamp-causal; model inference is not an online two-stream comparison."
+}

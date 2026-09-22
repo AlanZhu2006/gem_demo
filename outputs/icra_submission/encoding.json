@@ -1,0 +1,29 @@
+{
+  "version": 24,
+  "video": "outputs/icra_submission/GEM_ICRA_submission.mp4",
+  "master": "outputs/icra_submission/GEM_ICRA_narrated_master.mp4",
+  "visual_source": "outputs/icra_submission/GEM_ICRA_master.mp4",
+  "duration": 178.0,
+  "width": 1440,
+  "height": 810,
+  "fps": 24,
+  "video_bitrate_kbps": 780,
+  "audio": true,
+  "audio_bitrate_kbps": 64,
+  "audio_codec": "AAC mono",
+  "subtitles": "English burned-in; external SRT and ASS",
+  "voice": "en-US-AvaMultilingualNeural",
+  "passes": 2,
+  "bytes": 19009643,
+  "last_table_extension_seconds": 0,
+  "order": [
+    "opening",
+    "indoor",
+    "outdoor",
+    "environments",
+    "simulation",
+    "method",
+    "results"
+  ],
+  "caption_layout": "LogoPlanner-inspired: single-line black bold with white outline, 16:9 safe area, no appended caption panel"
+}

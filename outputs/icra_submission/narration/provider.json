@@ -1,0 +1,9 @@
+{
+  "provider": "Microsoft Edge online neural TTS",
+  "client": "edge-tts",
+  "version": "7.2.8",
+  "voice": "en-US-AvaMultilingualNeural",
+  "rate": "+0%",
+  "source": "https://github.com/rany2/edge-tts",
+  "uploaded": "Authored narration text only; no source video or manuscript files."
+}

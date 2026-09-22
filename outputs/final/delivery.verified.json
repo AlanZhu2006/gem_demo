@@ -1,0 +1,62 @@
+{
+  "simulation": {
+    "frames": 1157,
+    "fps": 30.0,
+    "duration_s": 38.56666666666667,
+    "full_decode": true,
+    "failed_baseline_gray_channel_spread": [
+      2.9994074074074075
+    ],
+    "failed_baseline_mean_intensity": [
+      64.21116975308642
+    ],
+    "sha256": "1545c226120cff0c8ca6bb49da3450df25a9270c1af33dafbd733f73c5b04873"
+  },
+  "realworld": {
+    "frames": 940,
+    "fps": 30.0,
+    "duration_s": 31.333333333333332,
+    "full_decode": true,
+    "failed_baseline_gray_channel_spread": [
+      2.9991463414634145,
+      3.0
+    ],
+    "failed_baseline_mean_intensity": [
+      69.7516903794038,
+      45.60881834215168
+    ],
+    "sha256": "7e80312b08103701f5bde30cf671f486cac5ebc871baf8512fccb5596d4e0dea",
+    "causal_visibility_verified": true,
+    "independent_arrival_state_verified": true,
+    "outcome": {
+      "gem": {
+        "arrived": true,
+        "playback_source_s": 60.650000000000006
+      },
+      "base": {
+        "arrived": false,
+        "playback_source_s": 31.150000000000002
+      }
+    }
+  },
+  "outdoor": {
+    "frames": 2153,
+    "fps": 30.0,
+    "duration_s": 71.76666666666667,
+    "full_decode": true,
+    "clock_visibility_verified": true,
+    "independent_arrivals_verified": true,
+    "baseline_grayscale_every_failed_frame_verified": true,
+    "past_rgb_and_local_plans_verified": true,
+    "local_plan_visible_frames": {
+      "gem": 2123,
+      "base": 1465
+    },
+    "events": {
+      "base": 1465,
+      "gem": 2123
+    },
+    "sha256": "94e6460781b237168efeaae030fca98f910c70ce2a9851729bfa299d01966543",
+    "reconstruction_caveat": "gem reversed then base forward joint inference. Playback visibility is timestamp-causal; model inference is not an online two-stream comparison."
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "video": "/home/asus/Research/pengyue/gem_demo/outputs/final/simulation.mp4",
+  "frames": 1157,
+  "fps": 30.0,
+  "duration_seconds": 38.56666666666667,
+  "sequence": "NNR",
+  "baseline_tail_seconds": 3.0,
+  "arrival_hold_s": 0.0,
+  "end_hold_s": 1.0,
+  "baseline_tail_speed": 2.0166666666666666,
+  "all_frames_decoded": 1157,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "visibility_counts_verified": true,
+  "monotonic_step_clock": true,
+  "sampled_decoded_frames": [
+    0,
+    578,
+    983,
+    1156
+  ],
+  "cloud_mode": "raw",
+  "fusion_clock_verified": false,
+  "local_trajectory_frames_verified": {
+    "gem": 1020,
+    "base": 1112
+  },
+  "final_arm_steps": {
+    "gem": 690,
+    "base": 811
+  },
+  "visual_arrivals_verified": [
+    {
+      "arm": "gem",
+      "stage": "A",
+      "source_step": 67,
+      "video_frame": 101,
+      "hold_frames": 1
+    },
+    {
+      "arm": "gem",
+      "stage": "B",
+      "source_step": 243,
+      "video_frame": 365,
+      "hold_frames": 1
+    },
+    {
+      "arm": "gem",
+      "stage": "C",
+      "source_step": 690,
+      "video_frame": 1035,
+      "hold_frames": 2
+    },
+    {
+      "arm": "base",
+      "stage": "A",
+      "source_step": 67,
+      "video_frame": 101,
+      "hold_frames": 1
+    },
+    {
+      "arm": "base",
+      "stage": "B",
+      "source_step": 243,
+      "video_frame": 365,
+      "hold_frames": 1
+    }
+  ],
+  "final_leg_results": {
+    "gem": [
+      {
+        "stage": "A",
+        "reached": true,
+        "termination": "rgb_visual_arrival"
+      },
+      {
+        "stage": "B",
+        "reached": true,
+        "termination": "rgb_visual_arrival"
+      },
+      {
+        "stage": "C",
+        "reached": true,
+        "termination": "rgb_visual_arrival"
+      }
+    ],
+    "base": [
+      {
+        "stage": "A",
+        "reached": true,
+        "termination": "rgb_visual_arrival"
+      },
+      {
+        "stage": "B",
+        "reached": true,
+        "termination": "rgb_visual_arrival"
+      },
+      {
+        "stage": "C",
+        "reached": false,
+        "termination": "stuck"
+      }
+    ]
+  }
+}

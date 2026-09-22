@@ -1,0 +1,19 @@
+# Local caches and editor state
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+.DS_Store
+.cursor/
+*.log
+
+# Phone dumps and third-party reference footage (not part of the published cut)
+*.MOV
+/IMG_*.MOV
+/gem_indoor.mp4
+/gem_indoor_map.mp4
+/gem_outdoor.mp4
+
+# All experiment outputs by default (~45 GB locally). Specific deliverables
+# are force-added in the initial commit.
+/outputs/

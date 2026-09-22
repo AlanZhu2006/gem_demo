@@ -1,0 +1,27 @@
+{
+  "frames": 940,
+  "fps": 30.0,
+  "duration_s": 31.333333333333332,
+  "full_decode": true,
+  "failed_baseline_gray_channel_spread": [
+    2.9991463414634145,
+    3.0
+  ],
+  "failed_baseline_mean_intensity": [
+    69.7516903794038,
+    45.60881834215168
+  ],
+  "sha256": "7e80312b08103701f5bde30cf671f486cac5ebc871baf8512fccb5596d4e0dea",
+  "causal_visibility_verified": true,
+  "independent_arrival_state_verified": true,
+  "outcome": {
+    "gem": {
+      "arrived": true,
+      "playback_source_s": 60.650000000000006
+    },
+    "base": {
+      "arrived": false,
+      "playback_source_s": 31.150000000000002
+    }
+  }
+}

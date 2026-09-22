@@ -1,0 +1,173 @@
+{
+  "voice": "en-US-AvaMultilingualNeural",
+  "rate": "+0%",
+  "language": "en-US",
+  "duration": 178.0,
+  "version": 24,
+  "subtitle_reference": "outputs/final/ICRA26.mp4",
+  "blocks": [
+    {
+      "id": "opening",
+      "start": 0.3,
+      "end": 10.85,
+      "source": "sec/0_abstract.tex",
+      "text": "We introduce GEM, a geometric episodic memory that uses a streaming geometry model to help existing navigation policies return to previously observed places without retraining.",
+      "caption_phrases": [
+        "We introduce GEM, a geometric episodic memory",
+        "that uses a streaming geometry model",
+        "to help existing navigation policies",
+        "return to previously observed places without retraining."
+      ]
+    },
+    {
+      "id": "indoor",
+      "start": 11.4,
+      "end": 31.7,
+      "source": "sec/4_method.tex; outputs/final/realworld.mp4; glass-wall stop confirmed by author",
+      "text": "We first show how this memory supports an indoor revisit, where the robot must return to a place shown in a goal image. Both runs share the same starting pose, goal image, and survey history, but the baseline stops before a glass wall, while GEM uses that history to reach the destination.",
+      "caption_phrases": [
+        "We first show how this memory supports an indoor revisit,",
+        "where the robot must return to a place shown in a goal image.",
+        "Both runs share the same starting pose,",
+        "goal image, and survey history,",
+        "but the baseline stops before a glass wall,",
+        "while GEM uses that history to reach the destination."
+      ],
+      "rate": "-8%"
+    },
+    {
+      "id": "outdoor",
+      "start": 32.4,
+      "end": 55.55,
+      "source": "sec/4_method.tex; outputs/final/outdoor.mp4",
+      "text": "In the outdoor trial, GEM turns toward the remembered goal and updates its direction as the robot moves, while the unchanged NavDP controller plans the local motion. Across ten real-world settings, GEM reaches the goal in twenty-five of thirty trials, compared with four of thirty for the baseline.",
+      "caption_phrases": [
+        "In the outdoor trial, GEM turns toward the remembered goal",
+        "and updates its direction as the robot moves,",
+        "while the unchanged NavDP controller plans the local motion.",
+        "Across ten real-world settings,",
+        "GEM reaches the goal in twenty-five of thirty trials,",
+        "compared with four of thirty for the baseline."
+      ]
+    },
+    {
+      "id": "environments",
+      "start": 56.25,
+      "end": 60.85,
+      "source": "sec_lg/5_experiments.tex",
+      "text": "We also evaluate in Habitat on HM3D and MP3D.",
+      "caption_phrases": [
+        "We also evaluate in Habitat on HM3D and MP3D."
+      ]
+    },
+    {
+      "id": "simulation",
+      "start": 61.4,
+      "end": 81.7,
+      "source": "sec_lg/5_experiments.tex; Table II 003",
+      "text": "In this episode, both methods first reach two novel goals, collecting observations that remain available when the third goal asks them to revisit an earlier location. GEM uses this accumulated history to locate the goal relative to the current camera, allowing it to complete the sequence while the baseline fails.",
+      "caption_phrases": [
+        "In this episode, both methods first reach two novel goals,",
+        "collecting observations that remain available",
+        "when the third goal asks them to revisit an earlier location.",
+        "GEM uses this accumulated history",
+        "to locate the goal relative to the current camera,",
+        "allowing it to complete the sequence while the baseline fails."
+      ]
+    },
+    {
+      "id": "overview",
+      "start": 82.25,
+      "end": 92.0,
+      "source": "sec/4_method.tex; Fig. 1(a)",
+      "text": "These revisits rely on shared geometry, which a frozen model builds by estimating pose and depth from RGB images, without external pose measurements.",
+      "caption_phrases": [
+        "These revisits rely on shared geometry,",
+        "which a frozen model builds by estimating pose and depth",
+        "from RGB images, without external pose measurements."
+      ]
+    },
+    {
+      "id": "memory",
+      "start": 92.4,
+      "end": 102.1,
+      "source": "sec/4_method.tex; Fig. 1(b)",
+      "text": "This memory combines a working state for streaming geometry with an archive that links past images to their geometry, and both are retained as the robot moves between goals.",
+      "caption_phrases": [
+        "This memory combines a working state for streaming geometry",
+        "with an archive that links past images to their geometry,",
+        "and both are retained as the robot moves between goals."
+      ]
+    },
+    {
+      "id": "readout",
+      "start": 102.45,
+      "end": 118.85,
+      "source": "sec/4_method.tex; Fig. 1(c)",
+      "text": "When a new goal image is given, GEM matches it to a supporting historical view and uses archived depth to estimate and verify the goal pose. The shared geometry then connects that pose to the current camera, even without direct image overlap.",
+      "caption_phrases": [
+        "When a new goal image is given,",
+        "GEM matches it to a supporting historical view",
+        "and uses archived depth to estimate and verify the goal pose.",
+        "The shared geometry then connects that pose",
+        "to the current camera, even without direct image overlap."
+      ]
+    },
+    {
+      "id": "interfaces",
+      "start": 119.35,
+      "end": 134.7,
+      "source": "sec/4_method.tex; Fig. 1",
+      "text": "Once the goal pose is cached, GEM updates its bearing as the robot moves. NavDP receives this cue alongside the original goal image, while ViNT and NoMaD use the verified historical view; if verification fails, the original inputs are retained.",
+      "caption_phrases": [
+        "Once the goal pose is cached,",
+        "GEM updates its bearing as the robot moves.",
+        "NavDP receives this cue alongside the original goal image,",
+        "while ViNT and NoMaD use the verified historical view;",
+        "if verification fails, the original inputs are retained."
+      ]
+    },
+    {
+      "id": "table_i",
+      "start": 135.3,
+      "end": 154.7,
+      "source": "tables/main_matrix.tex; sec_lg/5_experiments.tex",
+      "text": "To test these benefits across controllers, we compare three frozen policies on HM3D and MP3D under matched histories and evaluation conditions. Adding GEM improves revisit success by sixty point seven to eighty-one percentage points, while success on novel goals is maintained or improved across all six comparisons.",
+      "caption_phrases": [
+        "To test these benefits across controllers,",
+        "we compare three frozen policies on HM3D and MP3D",
+        "under matched histories and evaluation conditions.",
+        "Adding GEM improves revisit success",
+        "by sixty point seven to eighty-one percentage points,",
+        "while success on novel goals is maintained or improved",
+        "across all six comparisons."
+      ]
+    },
+    {
+      "id": "table_ii_a",
+      "start": 155.25,
+      "end": 166.7,
+      "source": "tables/continual_meeting.tex (a)",
+      "text": "When we extend the evaluation to continuous navigation, where each method builds its own history across goals, GEM completes sixty-four three-goal sequences, compared with twelve for the baseline.",
+      "caption_phrases": [
+        "When we extend the evaluation to continuous navigation,",
+        "where each method builds its own history across goals,",
+        "GEM completes sixty-four three-goal sequences,",
+        "compared with twelve for the baseline."
+      ]
+    },
+    {
+      "id": "table_ii_c",
+      "start": 167.2,
+      "end": 177.55,
+      "source": "tables/continual_meeting.tex (c)",
+      "text": "When both methods receive the same two-goal histories, third-goal revisit success rises from eight to seventeen out of twenty, while novel success remains four out of twenty for both.",
+      "caption_phrases": [
+        "When both methods receive the same two-goal histories,",
+        "third-goal revisit success rises",
+        "from eight to seventeen out of twenty,",
+        "while novel success remains four out of twenty for both."
+      ]
+    }
+  ]
+}

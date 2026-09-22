@@ -1,0 +1,10 @@
+{
+  "rgb_goal_arrival.py": {
+    "source": "/home/asus/Research/Nav-graph-blind/projects/realworld/runtime/experiment_archives/jetson_20260919/jetson/runtime/go2/demo_experiments/demo_20260919_video/metadata/source_snapshot/deployment/go2/rgb_goal_arrival.py",
+    "sha256": "becc725cfbd0e17775fb7ff17fa5dcc4e1e668e923c1468638e3c870b4cba9fd"
+  },
+  "image_goal_io.py": {
+    "source": "/home/asus/Research/Nav-graph-blind/projects/realworld/runtime/experiment_archives/jetson_20260919/jetson/runtime/go2/demo_experiments/demo_20260919_video/metadata/source_snapshot/deployment/go2/image_goal_io.py",
+    "sha256": "17b5bc83083ac21b6099446818a698a28f05917f13c7304303f7edca937db523"
+  }
+}

@@ -1,0 +1,9 @@
+{"type": "WordBoundary", "offset": 750000, "duration": 1125000, "text": "We"}
+{"type": "WordBoundary", "offset": 2000000, "duration": 2875000, "text": "also"}
+{"type": "WordBoundary", "offset": 5000000, "duration": 5500000, "text": "evaluate"}
+{"type": "WordBoundary", "offset": 10625000, "duration": 875000, "text": "in"}
+{"type": "WordBoundary", "offset": 11625000, "duration": 6125000, "text": "Habitat"}
+{"type": "WordBoundary", "offset": 17875000, "duration": 1750000, "text": "on"}
+{"type": "WordBoundary", "offset": 19750000, "duration": 10500000, "text": "HM3D"}
+{"type": "WordBoundary", "offset": 33000000, "duration": 2750000, "text": "and"}
+{"type": "WordBoundary", "offset": 36625000, "duration": 9625000, "text": "MP3D"}
