@@ -1,0 +1,304 @@
+{
+  "source": "/home/asus/Research/pengyue/gem_demo/outputs/cec_090850_rgb/manifest.json",
+  "frames": 962,
+  "sensor_interval_percentiles_seconds": {
+    "min": 0.033165771,
+    "median": 0.033358155,
+    "p90": 0.133423828,
+    "p99": 0.31405976539999925,
+    "max": 0.834659668
+  },
+  "gaps_over_200ms": [
+    {
+      "first_key": 10,
+      "second_key": 11,
+      "seconds": 0.300172852
+    },
+    {
+      "first_key": 38,
+      "second_key": 39,
+      "seconds": 0.23350708
+    },
+    {
+      "first_key": 48,
+      "second_key": 49,
+      "seconds": 0.233485596
+    },
+    {
+      "first_key": 49,
+      "second_key": 50,
+      "seconds": 0.200129638
+    },
+    {
+      "first_key": 59,
+      "second_key": 60,
+      "seconds": 0.301071289
+    },
+    {
+      "first_key": 65,
+      "second_key": 66,
+      "seconds": 0.300743408
+    },
+    {
+      "first_key": 74,
+      "second_key": 75,
+      "seconds": 0.266818848
+    },
+    {
+      "first_key": 83,
+      "second_key": 84,
+      "seconds": 0.200122559
+    },
+    {
+      "first_key": 111,
+      "second_key": 112,
+      "seconds": 0.233466309
+    },
+    {
+      "first_key": 121,
+      "second_key": 122,
+      "seconds": 0.400148193
+    },
+    {
+      "first_key": 126,
+      "second_key": 127,
+      "seconds": 0.200065918
+    },
+    {
+      "first_key": 146,
+      "second_key": 147,
+      "seconds": 0.200063477
+    },
+    {
+      "first_key": 165,
+      "second_key": 166,
+      "seconds": 0.266789063
+    },
+    {
+      "first_key": 197,
+      "second_key": 198,
+      "seconds": 0.233419189
+    },
+    {
+      "first_key": 203,
+      "second_key": 204,
+      "seconds": 0.200065918
+    },
+    {
+      "first_key": 212,
+      "second_key": 213,
+      "seconds": 0.20010669
+    },
+    {
+      "first_key": 216,
+      "second_key": 217,
+      "seconds": 0.233421875
+    },
+    {
+      "first_key": 217,
+      "second_key": 218,
+      "seconds": 0.233417237
+    },
+    {
+      "first_key": 252,
+      "second_key": 253,
+      "seconds": 0.366806152
+    },
+    {
+      "first_key": 263,
+      "second_key": 264,
+      "seconds": 0.266776367
+    },
+    {
+      "first_key": 268,
+      "second_key": 269,
+      "seconds": 0.233713135
+    },
+    {
+      "first_key": 270,
+      "second_key": 271,
+      "seconds": 0.834659668
+    },
+    {
+      "first_key": 280,
+      "second_key": 281,
+      "seconds": 0.233872803
+    },
+    {
+      "first_key": 290,
+      "second_key": 291,
+      "seconds": 0.333560059
+    },
+    {
+      "first_key": 295,
+      "second_key": 296,
+      "seconds": 0.667141846
+    },
+    {
+      "first_key": 305,
+      "second_key": 306,
+      "seconds": 0.200131592
+    },
+    {
+      "first_key": 332,
+      "second_key": 333,
+      "seconds": 0.266822998
+    },
+    {
+      "first_key": 366,
+      "second_key": 367,
+      "seconds": 0.200120362
+    },
+    {
+      "first_key": 378,
+      "second_key": 379,
+      "seconds": 0.333553711
+    },
+    {
+      "first_key": 395,
+      "second_key": 396,
+      "seconds": 0.300262207
+    },
+    {
+      "first_key": 414,
+      "second_key": 415,
+      "seconds": 0.233473633
+    },
+    {
+      "first_key": 426,
+      "second_key": 427,
+      "seconds": 0.233461182
+    },
+    {
+      "first_key": 445,
+      "second_key": 446,
+      "seconds": 0.233457519
+    },
+    {
+      "first_key": 460,
+      "second_key": 461,
+      "seconds": 0.200187012
+    },
+    {
+      "first_key": 493,
+      "second_key": 494,
+      "seconds": 0.200163086
+    },
+    {
+      "first_key": 494,
+      "second_key": 495,
+      "seconds": 0.266884033
+    },
+    {
+      "first_key": 548,
+      "second_key": 549,
+      "seconds": 0.300196045
+    },
+    {
+      "first_key": 558,
+      "second_key": 559,
+      "seconds": 0.200127685
+    },
+    {
+      "first_key": 577,
+      "second_key": 578,
+      "seconds": 0.333543457
+    },
+    {
+      "first_key": 592,
+      "second_key": 593,
+      "seconds": 0.26683667
+    },
+    {
+      "first_key": 628,
+      "second_key": 629,
+      "seconds": 0.233473633
+    },
+    {
+      "first_key": 629,
+      "second_key": 630,
+      "seconds": 0.200118897
+    },
+    {
+      "first_key": 646,
+      "second_key": 647,
+      "seconds": 0.266835693
+    },
+    {
+      "first_key": 659,
+      "second_key": 660,
+      "seconds": 0.200129151
+    },
+    {
+      "first_key": 689,
+      "second_key": 690,
+      "seconds": 0.33354248
+    },
+    {
+      "first_key": 695,
+      "second_key": 696,
+      "seconds": 0.266837158
+    },
+    {
+      "first_key": 712,
+      "second_key": 713,
+      "seconds": 0.200126221
+    },
+    {
+      "first_key": 731,
+      "second_key": 732,
+      "seconds": 0.266891845
+    },
+    {
+      "first_key": 742,
+      "second_key": 743,
+      "seconds": 0.266895752
+    },
+    {
+      "first_key": 757,
+      "second_key": 758,
+      "seconds": 0.300217529
+    },
+    {
+      "first_key": 772,
+      "second_key": 773,
+      "seconds": 0.366962402
+    },
+    {
+      "first_key": 778,
+      "second_key": 779,
+      "seconds": 0.200144043
+    },
+    {
+      "first_key": 782,
+      "second_key": 783,
+      "seconds": 0.233500977
+    },
+    {
+      "first_key": 833,
+      "second_key": 834,
+      "seconds": 0.266853516
+    },
+    {
+      "first_key": 839,
+      "second_key": 840,
+      "seconds": 0.266859131
+    },
+    {
+      "first_key": 861,
+      "second_key": 862,
+      "seconds": 0.366936035
+    },
+    {
+      "first_key": 890,
+      "second_key": 891,
+      "seconds": 0.300213867
+    },
+    {
+      "first_key": 938,
+      "second_key": 939,
+      "seconds": 0.200138183
+    }
+  ],
+  "note": "All recorded RGB messages in extraction interval are retained; no causal attribution to reconstruction error."
+}

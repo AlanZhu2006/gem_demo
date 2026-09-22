@@ -7,7 +7,9 @@ The GitHub repo is a **method + deliverable** package. The machine that made the
 | Path | Why |
 |---|---|
 | `*.py`, `vendor/` | Reconstruction, render, verify, ICRA assembly |
-| `docs/` | Production method, incremental clouds, issues, dated history |
+| `docs/` | Handbook (`lingbot_deployment.md` is canonical for LingBot), ICRA cut, issues, dated history |
+| `project_site/` | Anonymous paper PDF, architecture crops, teaser and clip transcodes for the project page |
+| `tools/build_project_site_assets.py` | Regenerates `project_site/assets/` from paper + v24 video |
 | `joint_frame.json` | Indoor joint display scale / floor (`outputs/joint_demo_flashinfer`) |
 | `ground_frame.json`, `ground_frames.json` | Earlier *separate-arm* indoor diagnostics (not the delivered joint session) |
 | `sim_frame.json` | Historical `outputs/sim_3leg_demo` frame; **not** the delivered NNR clip |
@@ -25,6 +27,21 @@ The GitHub repo is a **method + deliverable** package. The machine that made the
 | `outputs/icra_submission/narration/script.json` | Slots, phrases, Ava settings |
 | `outputs/icra_submission/narration/*.mp3`, `*.jsonl` | Cached TTS + word timestamps |
 | `outputs/icra_submission/paper_tables/table_{i,ii_a,ii_c}.png` | Paper crops used on screen |
+| `outputs/joint_rgb/manifest.json` | Indoor joint RGB list (Baseline reversed then GEM) |
+| `outputs/outdoor_inputs/manifest_reverse.json` | Outdoor joint RGB list (GEM reversed then Baseline) |
+| `outputs/nnr003_visual_rgb/manifest_forward_merged.json` | Simulation merged RGB list |
+| `outputs/joint_demo_flashinfer/reconstruction.json` | Indoor session metadata (no NPZ frames) |
+| `outputs/outdoor_joint_reverse/reconstruction.json` | Outdoor session metadata |
+| `outputs/nnr003_forward_joint/reconstruction.json` | Sim joint metadata |
+| `outputs/sdpa_skip_append_audit.json` | SDPA still appends when `_skip_append=True` |
+| `outputs/source_timing_audit.json` | Source RGB timestamp gaps |
+| `outputs/demo_entrypoint_audit/report.json` | Official viewer vs corrected unprojection |
+| `outputs/joint_demo_flashinfer/pose_convention_audit.json` | Indoor joint LK test |
+| `outputs/real_floor_audit/` | Indoor floor-band evidence stills + JSON |
+| `outputs/cloud_display_audit/height_ablation.json` | Sim floor-clip ablation |
+| `outputs/icra_submission/assembly.audit.json` | Source-clip hashes used by the v24 encode |
+| `outputs/icra_submission/montage_motion/selection.json` | Opening 3×3 scene list |
+| `outputs/nnr_selection/selection.md` | Why NNR-003 was chosen |
 
 ## Local only (gitignored)
 

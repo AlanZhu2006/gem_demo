@@ -1,0 +1,107 @@
+{
+  "sources": [
+    {
+      "path": "/home/asus/Research/Nav-graph-blind/projects/paper/main.tex",
+      "sha256": "e9e08c80672a80a7e7af5a4e71eef48c7d8cdc609eb9149aa91b42b3c1c773e7"
+    },
+    {
+      "path": "/home/asus/Research/Nav-graph-blind/projects/paper/main.pdf",
+      "sha256": "05fb79950330760e56e978e1853ec5d13898f0223e97ad20484f4460ebb8bc32"
+    },
+    {
+      "path": "/home/asus/Research/Nav-graph-blind/projects/paper/tables/main_matrix.tex",
+      "sha256": "b8967a4b25dcf801a50f5d08ac503cc5a68b2f044a12ec93dac8d9fb62681701"
+    },
+    {
+      "path": "/home/asus/Research/Nav-graph-blind/projects/paper/tables/continual_meeting.tex",
+      "sha256": "f9ef8718e0656a27d60c0f919457d21176633f731fc109aa7c74179e62598cbf"
+    },
+    {
+      "path": "/home/asus/Research/Nav-graph-blind/projects/paper/figures/gem_architecture_pic_20260915/GEM_architecture_pic_slide2.png",
+      "sha256": "0125884b94177525fbfa1420c789c338407cf74de0ed6d1808dcb9eb9b74d70d"
+    },
+    {
+      "path": "/home/asus/Research/pengyue/gem_demo/outputs/icra_submission/GEM_ICRA_master.mp4",
+      "sha256": "42fbb848c897076c3f123f723e2683fe5b3c2cf6570a6ba8a9bf731cfc11e4ef"
+    },
+    {
+      "path": "/home/asus/Research/pengyue/gem_demo/outputs/icra_submission/GEM_ICRA_submission.mp4",
+      "sha256": "03017a4db14bc8e7eb214734a28f3267fb165ea09966d8d600b78c6b06937d2c"
+    },
+    {
+      "path": "/home/asus/Research/pengyue/gem_demo/outputs/icra_submission/montage_motion/selection.json",
+      "sha256": "a3c49f79aeeef57f8285fa857cb11108fa215d226e1bf7563acc16ea70da8f3d"
+    }
+  ],
+  "assets": [
+    {
+      "name": "architecture.webp",
+      "bytes": 648174
+    },
+    {
+      "name": "favicon.svg",
+      "bytes": 195
+    },
+    {
+      "name": "indoor.jpg",
+      "bytes": 144308
+    },
+    {
+      "name": "indoor.mp4",
+      "bytes": 1990168
+    },
+    {
+      "name": "memory.webp",
+      "bytes": 166292
+    },
+    {
+      "name": "outdoor.jpg",
+      "bytes": 142461
+    },
+    {
+      "name": "outdoor.mp4",
+      "bytes": 2331902
+    },
+    {
+      "name": "overview.webp",
+      "bytes": 136486
+    },
+    {
+      "name": "paper.pdf",
+      "bytes": 3992757
+    },
+    {
+      "name": "presentation.en.srt",
+      "bytes": 4392
+    },
+    {
+      "name": "presentation.jpg",
+      "bytes": 165014
+    },
+    {
+      "name": "presentation.mp4",
+      "bytes": 19009643
+    },
+    {
+      "name": "readout.webp",
+      "bytes": 345422
+    },
+    {
+      "name": "simulation.jpg",
+      "bytes": 229694
+    },
+    {
+      "name": "simulation.mp4",
+      "bytes": 3610981
+    },
+    {
+      "name": "teaser.jpg",
+      "bytes": 174786
+    },
+    {
+      "name": "teaser.mp4",
+      "bytes": 1265540
+    }
+  ],
+  "note": "Teaser is recorded incremental point-cloud visualization, not an online reconstruction timing claim. Demonstration sampling follows the v24 video. Paper PDF is the current anonymous manuscript."
+}

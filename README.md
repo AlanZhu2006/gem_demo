@@ -2,7 +2,7 @@
 
 This repository is the production record for the **ICRA 2027 accompanying video** of GEM (Geometric Episodic Memory). It keeps the method, the locked source clips, the 178-second submission encode, and a written account of the incremental point-cloud pipeline — including mistakes that actually changed the picture.
 
-It is **not** a dump of the local reconstruction cache. On the machine that made the video, `outputs/` is about 45 GB of LingBot sessions, Habitat runs, and editor previews. Those stay local. GitHub holds the code, the documents, and the files needed to *name* and *re-encode* the cut.
+The **LingBot operations handbook** is [`docs/lingbot_deployment.md`](docs/lingbot_deployment.md). Read that before running reconstruction. NPZ sessions stay on the lab disk (~45 GB); GitHub holds the handbook, scripts, display calibrations, audit JSON, locked clips, and the project-site media.
 
 | File | Role |
 |---|---|
@@ -15,11 +15,13 @@ It is **not** a dump of the local reconstruction cache. On the machine that made
 
 ## Documents
 
-1. [How the 178 s video is assembled](docs/PRODUCTION.md)
-2. [Incremental point clouds](docs/INCREMENTAL_POINT_CLOUD.md) — RGB-only LingBot streaming, pose convention, joint sessions, display filters, opening 3×3 grid
-3. [Problems and how they were fixed](docs/ISSUES.md)
-4. [Local vs published files](docs/DATA_LAYOUT.md)
-5. Dated lab notes, kept as evidence: [`docs/history/`](docs/history/)
+1. [LingBot-Map operations handbook](docs/lingbot_deployment.md) — environment, pose convention, FlashInfer, joint sessions, verification. **Read this first for reconstruction.**
+2. [Historical issue log](docs/lingbot_deployment_history.md) — archive only; do not copy commands from it
+3. [How the 178 s video is assembled](docs/PRODUCTION.md)
+4. [Incremental point clouds](docs/INCREMENTAL_POINT_CLOUD.md) — RGB-only streaming, display filters, opening 3×3 grid
+5. [Problems and how they were fixed](docs/ISSUES.md)
+6. [Local vs published files](docs/DATA_LAYOUT.md)
+7. Dated lab notes: [`docs/history/`](docs/history/)
 
 ## Rebuild the ICRA encode (from locked clips)
 

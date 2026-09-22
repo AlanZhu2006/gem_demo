@@ -2,6 +2,8 @@
 
 The 3D in this video is a **timestamped replay of LingBot-Map predictions**. Each RGB frame that the model actually saw produces one depth, one confidence map, one K, and one camera pose. The renderer then *reveals* those chunks in playback order. Nothing in the delivered picture is a globally optimized map.
 
+The operations handbook — environment, pose convention, FlashInfer, joint-session recipe, and the numbers that justified them — is [`lingbot_deployment.md`](lingbot_deployment.md). This page is the video-facing summary of that handbook.
+
 Three properties were non-negotiable after the first failed attempts:
 
 1. **RGB only.** Recorded depth, body odometry, and Habitat GT pose never enter the network. Odometry is used afterwards for *diagnosis* (Sim(3) RMSE) and, in the opening montage, to *pick which frames to keep*.

@@ -10,7 +10,7 @@ saying full demo parity was not yet tested is historical. FlashInfer video
 rendering and visual acceptance remain pending. See
 [VIDEO_PROGRESS_HANDOFF.md](VIDEO_PROGRESS_HANDOFF.md) for current artifacts,
 commands and the Claude handoff, and the dated update at the top of the shared
-[deployment note](../AnchorScale/docs/lingbot_deployment.md).
+[deployment note](../lingbot_deployment.md).
 
 The first implementation followed the deployment note's model, preprocessing,
 attention, cache and confidence settings, but accepted its c2w/w2c conclusion

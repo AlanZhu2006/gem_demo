@@ -1,0 +1,7 @@
+{
+  "class_name": "SDPAAttention",
+  "skip_append": true,
+  "cached_frames_before": 1,
+  "cached_frames_after": 2,
+  "expected_after": 1
+}

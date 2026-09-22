@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fafbf9">
+  <title>GEM — Geometric Episodic Memory</title>
+  <meta name="description" content="A Streaming Geometry Model Is an Episodic Memory: Monocular Multi-Goal Navigation Without a Pose Oracle. GEM helps frozen navigation policies revisit previously observed places without additional training.">
+  <meta property="og:title" content="GEM — A Streaming Geometry Model Is an Episodic Memory">
+  <meta property="og:description" content="Monocular multi-goal navigation without a pose oracle. Explore the paper, real-world demonstrations, and geometric memory.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://alanzhu2006.github.io/gem/assets/teaser.jpg">
+  <meta property="og:url" content="https://alanzhu2006.github.io/gem/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://alanzhu2006.github.io/gem/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav-shell" aria-label="Main navigation">
+      <a class="wordmark" href="#top" aria-label="GEM home">GEM<span class="brand-dot"></span></a>
+      <div class="nav-links"><a href="#demonstrations">Demos</a><a href="#method">Method</a><a href="#results">Results</a><a href="assets/paper.pdf" target="_blank" rel="noopener">Paper <span aria-hidden="true">↗</span></a></div>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero section-shell" id="top" aria-labelledby="paper-title">
+      <p class="hero-wordmark">GEM<span aria-hidden="true">.</span></p>
+      <p class="eyebrow">Geometric Episodic Memory</p>
+      <h1 id="paper-title">A Streaming Geometry Model<br class="desktop-break"> Is an Episodic Memory</h1>
+      <p class="paper-subtitle">Monocular Multi-Goal Navigation Without a Pose Oracle</p>
+      <div id="author-block" hidden><p id="authors" class="authors"></p><p id="affiliations" class="affiliations"></p></div>
+      <div class="resource-links" aria-label="Project resources">
+        <a class="button button-primary" href="assets/paper.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H6v18h12V7Zm0 0v5h4M9 12h6m-6 4h6"/></svg>Paper <span aria-hidden="true">↗</span></a>
+        <a class="button" href="#film"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 11 7-11 7Z"/></svg>Watch the film <span class="duration">2:58</span></a>
+        <a class="button" id="arxiv-link" hidden>arXiv <span aria-hidden="true">↗</span></a>
+        <a class="button" id="code-link" hidden>Code <span aria-hidden="true">↗</span></a>
+      </div>
+      <p class="hero-summary">GEM uses the geometry of past observations to help existing navigation policies<br class="desktop-break"> return to previously seen places, without additional training.</p>
+      <figure class="teaser-figure">
+        <div class="teaser-stage">
+          <video id="teaser" muted loop playsinline preload="none" poster="assets/teaser.jpg" aria-label="Nine recorded navigation scenes with growing point clouds and local trajectory candidates" data-src="assets/teaser.mp4"></video>
+          <button class="media-toggle" id="teaser-toggle" type="button" aria-label="Play point-cloud animation"><span aria-hidden="true" id="teaser-icon">▶</span><span id="teaser-action">Play</span></button>
+        </div>
+        <figcaption><span class="caption-label">Geometry across experience</span><span>Recorded indoor, outdoor, and simulated navigation.</span></figcaption>
+      </figure>
+    </section>
+
+    <section class="intro section-shell" aria-labelledby="intro-title">
+      <div class="section-marker">The idea</div>
+      <div class="intro-copy"><h2 id="intro-title">Past views become useful again.</h2><p>A goal image may show a place the robot saw much earlier, beyond its controller’s short observation context. GEM retrieves a supporting view from that history, verifies the match geometrically, and relates the remembered goal to the current camera—even when the goal and current images do not overlap.</p></div>
+    </section>
+
+    <section class="section-shell content-section" id="demonstrations" aria-labelledby="demo-title">
+      <div class="section-heading"><div><p class="eyebrow">01 / Navigation</p><h2 id="demo-title">Memory in motion</h2></div><p>The same frozen controller,<br>with and without episodic recall.</p></div>
+      <div class="demo-tabs tab-list" role="tablist" aria-label="Navigation demonstrations">
+        <button type="button" role="tab" id="tab-indoor" aria-controls="demo-panel" aria-selected="true" data-demo="indoor"><span class="tab-index">01</span>Indoor revisit</button>
+        <button type="button" role="tab" id="tab-outdoor" aria-controls="demo-panel" aria-selected="false" tabindex="-1" data-demo="outdoor"><span class="tab-index">02</span>Outdoor revisit</button>
+        <button type="button" role="tab" id="tab-simulation" aria-controls="demo-panel" aria-selected="false" tabindex="-1" data-demo="simulation"><span class="tab-index">03</span>Three successive goals</button>
+      </div>
+      <div id="demo-panel" role="tabpanel" aria-labelledby="tab-indoor">
+        <div class="demo-stage"><video id="demo-video" controls muted playsinline preload="none" poster="assets/indoor.jpg" aria-label="Indoor revisit: GEM and the baseline" src="assets/indoor.mp4"></video></div>
+        <div class="demo-caption"><p id="demo-description">After the same initial survey, GEM returns to the image goal while the baseline stops before a glass wall. Both runs use frozen NavDP and share the starting pose and goal image.</p><div class="legend" aria-label="Trajectory colors"><span><i class="dot gem"></i>GEM</span><span><i class="dot baseline"></i>Baseline</span></div></div>
+      </div>
+      <details class="quiet-details"><summary>About these visualizations</summary><p>These are selected demonstrations, not aggregate evaluation results. Point clouds visualize recorded geometry; the real-world clouds use offline joint reconstruction. Playback speeds are marked in the clips. Goal-image borders indicate the recorded arrival event; the simulation’s RGB arrival display is distinct from the paper’s distance-based success criterion. Local trajectory candidates come from the recorded NavDP planner.</p></details>
+      <noscript><p>Additional demonstrations: <a href="assets/outdoor.mp4">outdoor revisit</a> · <a href="assets/simulation.mp4">three successive goals</a>.</p></noscript>
+    </section>
+
+    <section class="method-section" id="method" aria-labelledby="method-title">
+      <div class="section-shell content-section">
+        <div class="section-heading"><div><p class="eyebrow">02 / Method</p><h2 id="method-title">A geometric bridge through history</h2></div><p>Persistent geometry. Verified recall.<br>Frozen navigation policies.</p></div>
+        <p class="section-intro">A streaming geometry model relates past and current observations in a shared coordinate frame. GEM pairs that state with an indexed image archive, then reads out a verified historical view or a goal bearing through the controller’s existing interface.</p>
+        <div class="method-tabs tab-list" role="tablist" aria-label="Explore the paper architecture">
+          <button type="button" role="tab" id="method-full" aria-controls="method-panel" aria-selected="true" data-method="full">Full architecture</button>
+          <button type="button" role="tab" id="method-overview" aria-controls="method-panel" aria-selected="false" tabindex="-1" data-method="overview"><span>(a)</span> Overview</button>
+          <button type="button" role="tab" id="method-memory" aria-controls="method-panel" aria-selected="false" tabindex="-1" data-method="memory"><span>(b)</span> Memory</button>
+          <button type="button" role="tab" id="method-readout" aria-controls="method-panel" aria-selected="false" tabindex="-1" data-method="readout"><span>(c)</span> Readout</button>
+        </div>
+        <div id="method-panel" role="tabpanel" aria-labelledby="method-full" class="method-panel" data-view="full">
+          <button type="button" class="figure-button" id="expand-figure" aria-label="Enlarge the architecture figure"><img id="method-image" src="assets/architecture.webp" width="2048" height="1019" loading="lazy" alt="GEM architecture: a streaming geometry model maintains working state and an episodic archive; verified recall connects the goal to the current camera and a frozen controller."><span class="expand-hint" aria-hidden="true">View larger ↗</span></button>
+          <div class="method-explanation"><p class="caption-label" id="method-kicker">Figure 1 / System architecture</p><h3 id="method-detail-title">One memory, two readouts</h3><p id="method-description">Sparse readout supplies verified recall for goal conditioning. Dense readout supplies current monocular depth for local control. The geometry model and navigation policies remain frozen.</p></div>
+        </div>
+        <div class="method-principles">
+          <div><span class="step-number">1</span><h3>Retain experience</h3><p>Keep the streaming working state and indexed RGB–geometry archive across goals.</p></div>
+          <div><span class="step-number">2</span><h3>Verify the recall</h3><p>Retrieve a supporting view and estimate the goal pose from image matches and archived depth.</p></div>
+          <div><span class="step-number">3</span><h3>Guide the controller</h3><p>Read the goal relative to the current camera. If verification fails, preserve the native inputs.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell content-section" id="results" aria-labelledby="results-title">
+      <div class="section-heading"><div><p class="eyebrow">03 / Evaluation</p><h2 id="results-title">Revisit performance across controllers</h2></div><p>Paired histories and frozen weights.<br>HM3D, MP3D, and real-world navigation.</p></div>
+      <div class="key-results">
+        <div><p class="metric">+60.7–81.0<span>pp</span></p><h3>Revisit success gain</h3><p>Three controllers, two datasets.<br>Table I · paired evaluation.</p></div>
+        <div><p class="metric">64<span class="versus">vs</span>12</p><h3>Complete three-goal sequences</h3><p>GEM vs. baseline in continuous navigation.<br>Table II(a) · MP3D.</p></div>
+        <div><p class="metric">25/30<span class="versus">vs</span>4/30</p><h3>Real-world goals reached</h3><p>Eight indoor and two outdoor settings.<br>30 trials per method.</p></div>
+      </div>
+      <div class="results-heading"><div><h3>Historically supported revisits</h3><p id="dataset-description">HM3D · 28 shared histories across 21 scenes</p></div><div class="dataset-tabs tab-list" role="tablist" aria-label="Evaluation dataset"><button type="button" role="tab" id="dataset-hm3d" aria-controls="results-panel" aria-selected="true" data-dataset="hm3d">HM3D</button><button type="button" role="tab" id="dataset-mp3d" aria-controls="results-panel" aria-selected="false" tabindex="-1" data-dataset="mp3d">MP3D</button></div></div>
+      <div id="results-panel" role="tabpanel" aria-labelledby="dataset-hm3d" class="table-scroll" tabindex="0" aria-label="Revisit success comparison">
+        <table class="result-table"><caption class="sr-only">Revisit goals reached / queries, with success-rate gain in percentage points.</caption><thead><tr><th scope="col">Controller</th><th scope="col">Baseline</th><th scope="col">GEM</th><th scope="col">Gain <span>(pp)</span></th><th scope="col">95% CI <span>(pp)</span></th></tr></thead><tbody id="result-rows"><tr><th scope="row">NavDP</th><td>10/28</td><td class="gem-value">27/28</td><td>+60.7</td><td>[38.7, 82.6]</td></tr><tr><th scope="row">ViNT</th><td>5/28</td><td class="gem-value">25/28</td><td>+71.4</td><td>[51.7, 89.7]</td></tr><tr><th scope="row">NoMaD</th><td>7/28</td><td class="gem-value">24/28</td><td>+60.7</td><td>[35.7, 81.2]</td></tr></tbody></table>
+      </div>
+      <p class="table-note">Success is goals reached / queries; confidence intervals use scene-cluster bootstrap. Novel-goal success is maintained or improved across all six controller–dataset comparisons. <a href="assets/paper.pdf" target="_blank" rel="noopener">See Table I in the paper ↗</a></p>
+      <div class="result-context"><div><h3>Separating recall from history collection</h3><p>With the same two-goal histories, third-goal Revisit success rises from <strong>8/20 to 17/20</strong>, while Novel success remains 4/20 for both methods. This shared-history comparison is reported separately from continuous runs, where each method accumulates its own history.</p><span class="source-note">Table II(c) · HM3D · 20 histories across 13 scenes</span></div><div><h3>Scope and limitations</h3><p>Recall requires verifiable historical support. Pose drift can distort the bearing, and a bearing alone cannot describe long detours around obstacles. Archived observations also grow with episode length.</p><span class="source-note">See the paper for protocol, ablations, and limitations.</span></div></div>
+    </section>
+
+    <section class="film-section" id="film" aria-labelledby="film-title"><div class="section-shell content-section">
+      <div class="section-heading"><div><p class="eyebrow">04 / Film</p><h2 id="film-title">The complete walkthrough</h2></div><p>Demonstrations, method, and results.<br>2 min 58 sec · English narration and captions.</p></div>
+      <video id="presentation" controls playsinline preload="none" poster="assets/presentation.jpg" aria-label="GEM complete research video with English narration and burned-in captions" src="assets/presentation.mp4"></video>
+      <div class="film-links"><a href="assets/presentation.mp4" download>Download video <span aria-hidden="true">↓</span></a><a href="assets/presentation.en.srt" download>English subtitles <span aria-hidden="true">↓</span></a><a href="transcript.html">Read transcript <span aria-hidden="true">↗</span></a></div>
+    </div></section>
+    <section class="section-shell citation-section" id="citation" hidden aria-labelledby="citation-title"><div class="section-heading"><h2 id="citation-title">Citation</h2><button class="button" type="button" id="copy-citation">Copy BibTeX</button></div><pre><code id="bibtex"></code></pre><p id="copy-status" role="status"></p></section>
+  </main>
+  <footer class="section-shell site-footer"><a class="wordmark" href="#top">GEM<span class="brand-dot"></span></a><p>Geometric Episodic Memory</p><a href="assets/paper.pdf" target="_blank" rel="noopener">Read the paper ↗</a></footer>
+  <dialog id="figure-dialog" aria-labelledby="figure-dialog-title"><div class="dialog-bar"><h2 id="figure-dialog-title">GEM architecture</h2><button type="button" id="close-figure" aria-label="Close enlarged figure">Close <span aria-hidden="true">×</span></button></div><div class="dialog-image-wrap"><img id="large-figure" src="assets/architecture.webp" alt="Enlarged GEM architecture figure"></div><a id="figure-original" href="assets/architecture.webp" target="_blank" rel="noopener">Open full-resolution figure ↗</a></dialog>
+</body>
+</html>

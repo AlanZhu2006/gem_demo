@@ -171,7 +171,7 @@ validated registration. Their geometry should retain run/frame provenance.
 Check accumulated wall/floor agreement and tracking discontinuities before
 describing the result as globally consistent. Short-prefix parity is not a
 replacement for those checks. See
-[`lingbot_deployment.md`](../AnchorScale/docs/lingbot_deployment.md), especially
+[`lingbot_deployment.md`](../lingbot_deployment.md), especially
 the c2w fix, confidence gating, rotation/parallax failures and the later
 correction about session-dependent scale. Do not assume the early scale
 transfer statements still apply.

@@ -6,7 +6,7 @@
 ## 用户目标与本次交接范围
 
 用户想用 LingBot-Map 做 RGB 三维重建，并在视频中按时间增量展示点云；参照
-`../AnchorScale/docs/lingbot_deployment.md`，尤其强调应对齐通常使用的 `demo.py`，
+[`docs/lingbot_deployment.md`](../lingbot_deployment.md)，尤其强调应对齐通常使用的 `demo.py`，
 不认可把明显平移重影直接归因于模型漂移。最新要求是先更新 deployment 问题记录，
 再单独记录视频进度，交给 Claude 继续。不要把下面的诊断版本当作最终完成的视频。
 

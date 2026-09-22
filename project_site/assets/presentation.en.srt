@@ -1,0 +1,215 @@
+1
+00:00:00,348 --> 00:00:03,594
+We introduce GEM, a geometric episodic memory
+
+2
+00:00:03,594 --> 00:00:05,600
+that uses a streaming geometry model
+
+3
+00:00:05,600 --> 00:00:07,512
+to help existing navigation policies
+
+4
+00:00:07,512 --> 00:00:10,850
+return to previously observed places without retraining.
+
+5
+00:00:11,460 --> 00:00:15,441
+We first show how this memory supports an indoor revisit,
+
+6
+00:00:15,441 --> 00:00:19,218
+where the robot must return to a place shown in a goal image.
+
+7
+00:00:19,218 --> 00:00:21,678
+Both runs share the same starting pose,
+
+8
+00:00:21,678 --> 00:00:24,082
+goal image, and survey history,
+
+9
+00:00:24,082 --> 00:00:26,773
+but the baseline stops before a glass wall,
+
+10
+00:00:26,773 --> 00:00:30,454
+while GEM uses that history to reach the destination.
+
+11
+00:00:32,452 --> 00:00:36,215
+In the outdoor trial, GEM turns toward the remembered goal
+
+12
+00:00:36,215 --> 00:00:39,128
+and updates its direction as the robot moves,
+
+13
+00:00:39,128 --> 00:00:43,215
+while the unchanged NavDP controller plans the local motion.
+
+14
+00:00:43,215 --> 00:00:45,465
+Across ten real-world settings,
+
+15
+00:00:45,465 --> 00:00:48,728
+GEM reaches the goal in 25/30 trials,
+
+16
+00:00:48,728 --> 00:00:51,412
+compared with 4/30 for the baseline.
+
+17
+00:00:56,287 --> 00:01:00,850
+We also evaluate in Habitat on HM3D and MP3D.
+
+18
+00:01:01,465 --> 00:01:05,678
+In this episode, both methods first reach two novel goals,
+
+19
+00:01:05,678 --> 00:01:08,028
+collecting observations that remain available
+
+20
+00:01:08,028 --> 00:01:11,928
+when the third goal asks them to revisit an earlier location.
+
+21
+00:01:11,928 --> 00:01:13,890
+GEM uses this accumulated history
+
+22
+00:01:13,890 --> 00:01:16,752
+to locate the goal relative to the current camera,
+
+23
+00:01:16,752 --> 00:01:20,188
+allowing it to complete the sequence while the baseline fails.
+
+24
+00:01:22,314 --> 00:01:25,156
+These revisits rely on shared geometry,
+
+25
+00:01:25,156 --> 00:01:28,369
+which a frozen model builds by estimating pose and depth
+
+26
+00:01:28,369 --> 00:01:32,000
+from RGB images, without external pose measurements.
+
+27
+00:01:32,447 --> 00:01:35,482
+This memory combines a working state for streaming geometry
+
+28
+00:01:35,482 --> 00:01:38,739
+with an archive that links past images to their geometry,
+
+29
+00:01:38,739 --> 00:01:42,100
+and both are retained as the robot moves between goals.
+
+30
+00:01:42,503 --> 00:01:44,402
+When a new goal image is given,
+
+31
+00:01:44,402 --> 00:01:46,978
+GEM matches it to a supporting historical view
+
+32
+00:01:46,978 --> 00:01:51,352
+and uses archived depth to estimate and verify the goal pose.
+
+33
+00:01:51,352 --> 00:01:53,840
+The shared geometry then connects that pose
+
+34
+00:01:53,840 --> 00:01:57,450
+to the current camera, even without direct image overlap.
+
+35
+00:01:59,397 --> 00:02:01,256
+Once the goal pose is cached,
+
+36
+00:02:01,256 --> 00:02:04,232
+GEM updates its bearing as the robot moves.
+
+37
+00:02:04,232 --> 00:02:08,032
+NavDP receives this cue alongside the original goal image,
+
+38
+00:02:08,032 --> 00:02:11,432
+while ViNT and NoMaD use the verified historical view;
+
+39
+00:02:11,432 --> 00:02:14,700
+if verification fails, the original inputs are retained.
+
+40
+00:02:15,342 --> 00:02:17,513
+To test these benefits across controllers,
+
+41
+00:02:17,513 --> 00:02:21,506
+we compare three frozen policies on HM3D and MP3D
+
+42
+00:02:21,506 --> 00:02:24,807
+under matched histories and evaluation conditions.
+
+43
+00:02:24,807 --> 00:02:27,110
+Adding GEM improves revisit success
+
+44
+00:02:27,110 --> 00:02:29,984
+by 60.7 to 81.0 percentage points,
+
+45
+00:02:29,984 --> 00:02:32,857
+while success on novel goals is maintained or improved
+
+46
+00:02:32,857 --> 00:02:34,700
+across all six comparisons.
+
+47
+00:02:35,287 --> 00:02:38,564
+When we extend the evaluation to continuous navigation,
+
+48
+00:02:38,564 --> 00:02:41,709
+where each method builds its own history across goals,
+
+49
+00:02:41,709 --> 00:02:44,711
+GEM completes 64 three-goal sequences,
+
+50
+00:02:44,711 --> 00:02:46,700
+compared with 12 for the baseline.
+
+51
+00:02:47,249 --> 00:02:50,568
+When both methods receive the same two-goal histories,
+
+52
+00:02:50,568 --> 00:02:52,275
+third-goal revisit success rises
+
+53
+00:02:52,275 --> 00:02:54,319
+from eight to seventeen out of twenty,
+
+54
+00:02:54,319 --> 00:02:57,550
+while novel success remains 4/20 for both.

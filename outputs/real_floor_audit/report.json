@@ -1,0 +1,91 @@
+{
+  "sampled_observations": 291,
+  "sampling": "Every sixth eligible final-video observation, identical final map camera for all variants",
+  "raw_sampled_points": 2799420,
+  "quality_filtered_points": 825255,
+  "filtered_height_percentiles_m": {
+    "1": -0.18615422458409722,
+    "5": -0.06614847671625318,
+    "10": 0.04348986708362638,
+    "25": 0.17329345464580498,
+    "50": 0.5642265653888345,
+    "75": 1.1568512159317095,
+    "90": 1.9073517156408246,
+    "99": 2.1693951070545263
+  },
+  "variants": {
+    "Current: -8 cm": {
+      "points": 568508,
+      "occupied_pixels": 189001,
+      "added_pixels_vs_current": 0,
+      "lower_height_m": -0.08,
+      "upper_height_m": 1.1,
+      "quality": "filtered"
+    },
+    "Lower cut: -16 cm": {
+      "points": 593685,
+      "occupied_pixels": 200781,
+      "added_pixels_vs_current": 11780,
+      "lower_height_m": -0.16,
+      "upper_height_m": 1.1,
+      "quality": "filtered"
+    },
+    "Lower cut: -30 cm": {
+      "points": 602932,
+      "occupied_pixels": 209139,
+      "added_pixels_vs_current": 20138,
+      "lower_height_m": -0.3,
+      "upper_height_m": 1.1,
+      "quality": "filtered"
+    },
+    "Lower cut: -60 cm": {
+      "points": 604743,
+      "occupied_pixels": 209139,
+      "added_pixels_vs_current": 20138,
+      "lower_height_m": -0.6,
+      "upper_height_m": 1.1,
+      "quality": "filtered"
+    },
+    "No height cut": {
+      "points": 825255,
+      "occupied_pixels": 290681,
+      "added_pixels_vs_current": 101680,
+      "lower_height_m": -1000000.0,
+      "upper_height_m": 1000000.0,
+      "quality": "filtered"
+    },
+    "No quality filter; -30 cm": {
+      "points": 1577765,
+      "occupied_pixels": 416854,
+      "added_pixels_vs_current": 227853,
+      "lower_height_m": -0.3,
+      "upper_height_m": 1.1,
+      "quality": "raw"
+    },
+    "Confidence only; -30 cm": {
+      "points": 752908,
+      "occupied_pixels": 279175,
+      "added_pixels_vs_current": 90174,
+      "lower_height_m": -0.3,
+      "upper_height_m": 1.1,
+      "quality": "conf_only"
+    },
+    "Flatness only; -30 cm": {
+      "points": 1169904,
+      "occupied_pixels": 292656,
+      "added_pixels_vs_current": 103655,
+      "lower_height_m": -0.3,
+      "upper_height_m": 1.1,
+      "quality": "flat_only"
+    },
+    "Top 60% + flatness; -30 cm": {
+      "points": 897961,
+      "occupied_pixels": 248552,
+      "added_pixels_vs_current": 59551,
+      "lower_height_m": -0.3,
+      "upper_height_m": 1.1,
+      "quality": "conf40"
+    }
+  },
+  "note": "Screen coverage is not geometry accuracy; raw-filter ablation is diagnostic only."
+}

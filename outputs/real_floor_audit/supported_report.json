@@ -1,0 +1,35 @@
+[
+  {
+    "frame": 300,
+    "original_pixels": 125039,
+    "supported_pixels": 128767,
+    "added_pixels": 3728,
+    "stats": {
+      "observations": 657,
+      "candidates": 159336,
+      "accepted": 41661
+    }
+  },
+  {
+    "frame": 600,
+    "original_pixels": 227471,
+    "supported_pixels": 241958,
+    "added_pixels": 14487,
+    "stats": {
+      "observations": 1407,
+      "candidates": 555810,
+      "accepted": 91969
+    }
+  },
+  {
+    "frame": 939,
+    "original_pixels": 280114,
+    "supported_pixels": 292290,
+    "added_pixels": 12176,
+    "stats": {
+      "observations": 1741,
+      "candidates": 615547,
+      "accepted": 114200
+    }
+  }
+]
