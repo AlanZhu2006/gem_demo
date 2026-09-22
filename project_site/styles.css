@@ -18,3 +18,4 @@
 .tab-index{opacity:1;color:var(--muted)}
 .method-tabs button span{color:var(--muted)}
 @media(max-width:600px){.hero-wordmark{font-size:49px;margin-bottom:12px}.hero h1{font-size:31px}.hero{padding-top:32px}}
+.table-note a{text-decoration:underline}
