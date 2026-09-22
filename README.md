@@ -47,18 +47,15 @@ Changing narration text additionally needs `/tmp/gem-voice-env/bin/python synthe
 
 ## Rebuild a source clip (does not replace `outputs/final/`)
 
-Incremental reconstruction is a **separate** job from the ICRA edit. Typical indoor path:
+Incremental reconstruction is a **separate** job from the ICRA edit. Re-render from the existing NPZ session; write somewhere other than `outputs/final/`:
 
 ```bash
 PY=/home/asus/miniconda3/envs/lingbot-map/bin/python
-$PY run_lingbot_manifest.py \
-  --manifest outputs/realworld_inputs/manifest.json \
-  --out outputs/joint_demo_flashinfer \
-  --backend flashinfer --max-frame-num 2048
 $PY render_real_final.py --scene indoor --out /tmp/realworld_rebuild.mp4
+$PY render_real_final.py --scene outdoor --out /tmp/outdoor_rebuild.mp4
 ```
 
-Full geometry rules, pose convention, and why FlashInfer / joint order matter: [docs/INCREMENTAL_POINT_CLOUD.md](docs/INCREMENTAL_POINT_CLOUD.md).
+Full geometry rules, pose convention, joint-session order, and the re-infer commands: [docs/INCREMENTAL_POINT_CLOUD.md](docs/INCREMENTAL_POINT_CLOUD.md).
 
 ## What this video claims, and what it does not
 

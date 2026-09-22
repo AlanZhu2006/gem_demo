@@ -1,0 +1,26 @@
+{
+  "root": "outputs/outdoor_joint_reverse",
+  "manifest": "outputs/outdoor_inputs/manifest_reverse.json",
+  "inference_order": "gem reversed then base forward",
+  "scale": 0.10249657953302427,
+  "floor_n": [
+    -0.005999269475059124,
+    0.9842052411773791,
+    -0.17692951140141278
+  ],
+  "floor_d": 0.03774116018459944,
+  "mount_h": 0.41815826340491,
+  "scale_diagnostics": {
+    "gem": {
+      "scale": 0.10249657953302427,
+      "odom_fit_rmse_m": 0.2883006746670214
+    },
+    "base": {
+      "scale": 0.09691228121690766,
+      "odom_fit_rmse_m": 0.36592083251571084
+    }
+  },
+  "camera_plane_p95_m": 0.07601986496033783,
+  "seam_distance_m": 0.9304264664131571,
+  "source": "Original LingBot c2w; scale estimated against per-arm recorded odometry; plane fitted to camera centres and shifted by archived mount height. Display calibration only; model points and poses unchanged."
+}

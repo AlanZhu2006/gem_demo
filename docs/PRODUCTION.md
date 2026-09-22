@@ -45,7 +45,7 @@ Order is demonstration-first: indoor → outdoor → environment gallery → sim
 
 ## Two layers of work
 
-1. **Source clips** (`outputs/final/*.mp4`). Built from incremental LingBot reconstructions plus recorded RGB/plans. Documented in [INCREMENTAL_POINT_CLOUD.md](INCREMENTAL_POINT_CLOUD.md). These three files are frozen.
+1. **Source clips** (`outputs/final/*.mp4`). Built from incremental LingBot reconstructions plus recorded RGB/plans. Documented in [INCREMENTAL_POINT_CLOUD.md](INCREMENTAL_POINT_CLOUD.md). These three files are frozen. Indoor drawing uses `joint_frame.json`; outdoor uses `outputs/outdoor_frame.json`; simulation uses `outputs/nnr003_joint_frame.json` (not the historical root `sim_frame.json`).
 2. **ICRA cut**. `render_icra_submission.py` samples those clips, composites the opening / gallery / method / tables, then `build_icra_voiceover.py` + `encode_icra_voiceover.py` add Ava and captions.
 
 Do not mix the layers. Re-running LingBot does not update the submission until someone *intentionally* replaces a file in `outputs/final/` and re-verifies it.

@@ -122,6 +122,50 @@ Two **independent forward** official sessions (GEM / Baseline) on the packaged R
 
 Renderer: `render_table2_joint.py ... --cloud-mode raw`.
 
+## Rebuilding a source clip (lab disk, do not overwrite `outputs/final/`)
+
+Point clouds live in NPZ sessions that are gitignored (~2–5 GB each). The display JSONs *are* in git; they only rotate/scale for drawing.
+
+```bash
+export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1
+export CUDA_HOME=/home/asus/miniconda3/envs/lingbot-map
+export PATH="$CUDA_HOME/bin:$PATH"
+export LIBRARY_PATH="$CUDA_HOME/targets/x86_64-linux/lib"
+PY=/home/asus/miniconda3/envs/lingbot-map/bin/python
+```
+
+Re-render from **existing** reconstructions (writes a new file):
+
+```bash
+$PY render_real_final.py --scene indoor --out /tmp/realworld_rebuild.mp4
+$PY render_real_final.py --scene outdoor --out /tmp/outdoor_rebuild.mp4
+$PY render_table2_joint.py \
+  --source outputs/nnr003_visual_rgb \
+  --frame outputs/nnr003_joint_frame.json \
+  --out /tmp/simulation_rebuild.mp4 \
+  --theme minimal --presentation joint --cloud-mode raw \
+  --steps-per-second 20 --arrival-hold 0 --end-hold 1 \
+  --baseline-tail-seconds 3 --gem-track-width .18 --baseline-track-width .24
+```
+
+Re-infer only if the NPZ directory is gone. `--out` must be a **new** path:
+
+```bash
+$PY run_lingbot_manifest.py \
+  --manifest outputs/joint_rgb/manifest.json \
+  --out outputs/joint_demo_new \
+  --backend flashinfer --keyframe-interval 6 --max-frame-num 2048
+
+$PY run_lingbot_manifest.py \
+  --manifest outputs/outdoor_inputs/manifest_reverse.json \
+  --out outputs/outdoor_joint_new \
+  --backend flashinfer --keyframe-interval 12 --max-frame-num 4096
+```
+
+Simulation is two independent forward jobs whose shared prefix must match exactly; merge with `merge_table2_forward.py` and fit display with `fit_table2_joint.py`. Do not reuse `sim_frame.json` (that file is the older three-leg demo).
+
+`private_residency_server.py` is a lab GPU-parking helper for a shared workstation. It is not part of the picture.
+
 ## Floor, height band, and “supported” points
 
 Simulation originally clipped the floor at −0.08 m in camera-height units and looked empty. The delivered sim/outdoor band is **−0.30 m to +1.10 m** with the original top-35% confidence and 3.5% local depth-spread filter.

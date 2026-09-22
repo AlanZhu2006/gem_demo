@@ -14,6 +14,9 @@ __pycache__/
 /gem_indoor_map.mp4
 /gem_outdoor.mp4
 
+# One-off alignment experiments at the repo root (not used in the delivered clips)
+/register_base_to_gem.json
+
 # All experiment outputs by default (~45 GB locally). Specific deliverables
 # are force-added in the initial commit.
 /outputs/

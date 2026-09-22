@@ -8,6 +8,11 @@ The GitHub repo is a **method + deliverable** package. The machine that made the
 |---|---|
 | `*.py`, `vendor/` | Reconstruction, render, verify, ICRA assembly |
 | `docs/` | Production method, incremental clouds, issues, dated history |
+| `joint_frame.json` | Indoor joint display scale / floor (`outputs/joint_demo_flashinfer`) |
+| `ground_frame.json`, `ground_frames.json` | Earlier *separate-arm* indoor diagnostics (not the delivered joint session) |
+| `sim_frame.json` | Historical `outputs/sim_3leg_demo` frame; **not** the delivered NNR clip |
+| `outputs/outdoor_frame.json` | Outdoor display calibration (GEM-reversed joint session) |
+| `outputs/nnr003_joint_frame.json` | Delivered simulation display calibration (two forward sessions) |
 | `outputs/final/realworld.mp4` | Locked indoor clip (7.4 MB) |
 | `outputs/final/outdoor.mp4` | Locked outdoor clip (15 MB) |
 | `outputs/final/simulation.mp4` | Locked sim clip (18 MB) |

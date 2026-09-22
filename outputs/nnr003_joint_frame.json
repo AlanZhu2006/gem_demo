@@ -1,0 +1,60 @@
+{
+  "root": "/home/asus/Research/pengyue/gem_demo/outputs/nnr003_forward_joint",
+  "manifest": "/home/asus/Research/pengyue/gem_demo/outputs/nnr003_visual_rgb/manifest_forward_merged.json",
+  "scale": 0.29992065165052995,
+  "R": [
+    [
+      -0.19526330862494634,
+      -0.005438142159989203,
+      0.9807357783392462
+    ],
+    [
+      -0.005431415197950663,
+      -0.9999632962840851,
+      -0.0066261462114049294
+    ],
+    [
+      0.9807358156169207,
+      -0.006620626444317306,
+      0.19522660492796132
+    ]
+  ],
+  "t": [
+    -1.1648533500350282,
+    -0.9942625380256545,
+    3.72030609490715
+  ],
+  "floor_n": [
+    0.005438142159989203,
+    0.9999632962840851,
+    0.006620626444317306
+  ],
+  "floor_d": 0.14642759983603088,
+  "mount_h": 0.5,
+  "gt_fit_rmse_m": 0.17546947019695666,
+  "gt_fit_p95_m": 0.32312067114839516,
+  "arm_rmse_m": {
+    "gem": 0.18226883338426048,
+    "base": 0.1694778941879901
+  },
+  "identical_image_pairs": 238,
+  "identical_image_position_rmse_m": 0.0,
+  "identical_image_position_p95_m": 0.0,
+  "coordinate_policy": "One GT-to-LingBot similarity for scale, up, floor and goals only; raw c2w and depths remain unchanged.",
+  "inference_order": "Two original forward streams with identical prefix, identical inference settings and verified prefix outputs; no reverse frames or cross-arm observations in inference.",
+  "context_frames": 0,
+  "shared_prefix_frames": 245,
+  "branch_steps": {
+    "gem": {
+      "source_step": 245,
+      "inferred_translation_m": 0.04642797831918889,
+      "gt_translation_m": 0.0
+    },
+    "base": {
+      "source_step": 245,
+      "inferred_translation_m": 0.049418571323126714,
+      "gt_translation_m": 0.03727420077839236
+    }
+  },
+  "identical_image_note": "Shared prefix poses are identical by construction when shared_prefix_frames > 0; not an independent accuracy test."
+}
